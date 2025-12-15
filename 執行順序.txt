@@ -1,0 +1,36 @@
+Step1: (bash)
+
+cd ~/DNN_NeuroSim_V2.1
+
+# 創建並執行設置腳本
+nano setup_project.sh
+# (貼上上面的 setup_project.sh 內容)
+
+chmod +x setup_project.sh
+./setup_project.sh
+
+
+Step2: (bash)
+
+cd ~/DNN_NeuroSim_V2.1/RNN_Inference
+
+#安裝虛擬環境
+sudo apt update
+sudo apt install python3-venv
+
+python3 -m venv venv
+
+source venv/bin/activate
+
+
+Step3: (bash)
+
+# 安裝依賴
+pip3 install -r requirements.txt
+
+# 測試硬體模擬器
+python3 hardware_simulator.py
+
+# 執行完整實驗
+python3 run_experiments.py
+
